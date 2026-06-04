@@ -11,7 +11,7 @@ const queryClient = new QueryClient()
 const router = createBrowserRouter(routes)
 
 document.addEventListener('DOMContentLoaded', () => {
-  createRoot(document.getElementById('app') as HTMLElement).render(
+  createRoot(document.getElementById('layout') as HTMLElement).render(
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
       <ReactQueryDevtools />
