@@ -1,5 +1,5 @@
-import React from 'react'
 import { Movie } from '../../models/index.js'
+import { Link } from 'react-router'
 
 function MoviesList() {
   const movies: Movie[] = [
@@ -8,8 +8,20 @@ function MoviesList() {
     { id: 3, name: 'Avatar', category: 'Sci-fi', duration: 162 },
   ]
   return (
-    <div>
-      <h1>MoviesList</h1>
+    <div className="layout">
+      <h1>Movies List</h1>
+      <ul>
+        {movies &&
+          movies.map((movie) => (
+            <Link to={`/movies/${movie.id}`} key={movie.id}>
+              <li>
+                {movie.name}
+                {movie.category}
+                {movie.duration}
+              </li>
+            </Link>
+          ))}
+      </ul>
     </div>
   )
 }
