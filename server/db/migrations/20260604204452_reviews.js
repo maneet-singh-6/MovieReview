@@ -7,14 +7,10 @@ export function up(knex) {
     table.increments('id')
     table.string('name')
     table.string('date')
-    table.integer('movie_id').references('id').inTable('movies')
+    table.integer('movie_id').references('id').inTable('movies') //same as .references('movie.id')
   })
 }
 
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
 export function down(knex) {
   return knex.schema.dropTable('reviews')
 }
