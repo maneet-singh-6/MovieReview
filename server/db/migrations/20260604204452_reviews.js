@@ -8,6 +8,7 @@ export function up(knex) {
     table.string('name')
     table.string('date')
     table.integer('movie_id').references('id').inTable('movies') //same as .references('movie.id')
+    table.string('description')
   })
 }
 
