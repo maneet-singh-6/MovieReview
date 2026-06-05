@@ -24,3 +24,8 @@ export async function addReview(review: ReviewData): Promise<ReviewData> {
     .send(review)
   return response.body
 }
+
+export async function getReviewsByMovieId(id: number) {
+  const response = await request.get(`${rootURL}/movies/${id}/reviews`)
+  return response.body
+}
