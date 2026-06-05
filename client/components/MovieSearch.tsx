@@ -11,7 +11,7 @@ function MovieSearch() {
     data: movies,
     isLoading,
     isError,
-  } = useQuery<ImdbMovie[], Error>({
+  } = useQuery<ImdbMovie[]>({
     queryKey: ['imdbSearch', searchTerm],
     queryFn: () => searchMovies(searchTerm),
   })

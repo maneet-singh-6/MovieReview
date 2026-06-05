@@ -13,6 +13,10 @@ export function getMovies() {
   return connection('movies').select()
 }
 
+export function addMovie(movie: MovieData) {
+  return connection('movies').insert(movie)
+}
+
 export function getMovieById(id: number) {
   return connection('movies').where('id', id).first()
 }
