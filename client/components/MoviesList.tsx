@@ -68,7 +68,7 @@ function MoviesList() {
     <div className="layout">
       <h1>Movies List</h1>
 
-      <div>
+      <div className="search-bar">
         <form onSubmit={handleSearch}>
           <input
             type="text"
