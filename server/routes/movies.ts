@@ -13,6 +13,17 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.post('/', async (req, res) => {
+  try {
+    const newMovie = req.body
+    const movie = await db.addMovie(newMovie)
+    res.json(movie)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ message: 'Fail to add movie' })
+  }
+})
+
 router.get('/:id', async (req, res) => {
   try {
     const id = Number(req.params.id)

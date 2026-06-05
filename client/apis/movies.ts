@@ -1,9 +1,15 @@
 import request from 'superagent'
+import { MovieData } from '../../models/index.ts'
 
 const rootURL = new URL(`/api/v1`, document.baseURI)
 
 export async function getMovies() {
   const response = await request.get(`${rootURL}/movies`)
+  return response.body
+}
+
+export async function addMovie(movie: MovieData) {
+  const response = await request.post(`${rootURL}/movies`).send(movie)
   return response.body
 }
 
