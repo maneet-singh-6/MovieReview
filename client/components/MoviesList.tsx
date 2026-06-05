@@ -66,7 +66,7 @@ function MoviesList() {
 
   return (
     <div className="layout">
-      <h1>Movies List</h1>
+      <h1>Dad Night Cinema</h1>
 
       <div className="search-bar">
         <form onSubmit={handleSearch}>
