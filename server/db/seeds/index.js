@@ -5,9 +5,30 @@ export async function seed(knex) {
 
   // Inserts movies entry first, then second table which references this table
   await knex('movies').insert([
-    { id: 1, name: 'Kung Fu Panda', category: 'Family', duration: 92 },
-    { id: 2, name: 'Ready Player One', category: 'Sci-fi', duration: 140 },
-    { id: 3, name: 'Avatar', category: 'Sci-fi', duration: 162 },
+    {
+      id: 1,
+      name: 'Kung Fu Panda',
+      category: 'Family',
+      duration: 2008,
+      poster:
+        'https://m.media-amazon.com/images/M/MV5BZDU5MDNiMGItYjVmZi00NDUxLTg2OTktNGE0NzNlNzM4NzgyXkEyXkFqcGc@._V1_.jpg',
+    },
+    {
+      id: 2,
+      name: 'Ready Player One',
+      category: 'Sci-fi',
+      duration: 2018,
+      poster:
+        'https://m.media-amazon.com/images/M/MV5BNzVkMTgzODQtMWIwZC00NzE4LTgzZjYtMzAwM2I5OGZhNjE4XkEyXkFqcGc@._V1_.jpg',
+    },
+    {
+      id: 3,
+      name: 'Avatar',
+      category: 'Sci-fi',
+      duration: 2009,
+      poster:
+        'https://m.media-amazon.com/images/M/MV5BMDEzMmQwZjctZWU2My00MWNlLWE0NjItMDJlYTRlNGJiZjcyXkEyXkFqcGc@._V1_.jpg',
+    },
   ])
 
   await knex('reviews').insert([

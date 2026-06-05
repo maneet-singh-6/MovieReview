@@ -2,6 +2,7 @@ export interface MovieData {
   name: string
   category: string
   duration: number
+  poster: string
 }
 
 export interface Movie extends MovieData {

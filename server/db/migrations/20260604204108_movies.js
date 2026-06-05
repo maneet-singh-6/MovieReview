@@ -8,6 +8,7 @@ export function up(knex) {
     table.string('name')
     table.string('category')
     table.string('duration')
+    table.string('poster')
   })
 }
 
