@@ -2,12 +2,14 @@ import express from 'express'
 import * as Path from 'node:path'
 
 import imdbRoutes from './routes/imdb.ts'
+import movieRoutes from './routes/movies.ts'
 
 const server = express()
 
 server.use(express.json())
 
 server.use('/api/v1/imdb', imdbRoutes)
+server.use('/api/v1/movies', movieRoutes)
 
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(Path.resolve('public')))
