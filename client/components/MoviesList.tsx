@@ -66,39 +66,43 @@ function MoviesList() {
 
   return (
     <div className="layout">
-      <h1>Movies List</h1>
+      <div className="review-header">
+        <h1>Movies List</h1>
 
-      <div className="search-bar">
-        <form onSubmit={handleSearch}>
-          <input
-            type="text"
-            placeholder="Search for a movie"
-            value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)}
-          />
-          <button type="submit">Search</button>
-          <button type="button" onClick={handleReset}>
-            Reset
-          </button>
-        </form>
+        <div className="search-bar">
+          <form onSubmit={handleSearch} className="search-actions">
+            <input
+              type="text"
+              placeholder="Search and Add a movie"
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+            />
+            <button type="submit">Search</button>
+            <button type="button" onClick={handleReset}>
+              Reset
+            </button>
+          </form>
 
-        {searchedMovies && searchedMovies.length > 0 && (
-          <div className="dropdown">
-            {searchedMovies.map((movie) => (
-              <div
-                key={movie.id}
-                onClick={() => handleSelectMovie(movie)}
-                className="dropdown-list"
-              >
-                {movie.primaryTitle} ({movie.startYear})
-              </div>
-            ))}
-          </div>
-        )}
+          {searchedMovies && searchedMovies.length > 0 && (
+            <div className="dropdown">
+              {searchedMovies.map((movie) => (
+                <div
+                  key={movie.id}
+                  onClick={() => handleSelectMovie(movie)}
+                  className="dropdown-list"
+                >
+                  {movie.primaryTitle} ({movie.startYear})
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
-      {isLoading && <p>Loading movies...</p>}
-      {isError && <p>Error: Fetching Movies</p>}
+      <div className="loading-state">
+        {isLoading && <p>Loading movies...</p>}
+        {isError && <p>Error: Fetching Movies</p>}
+      </div>
 
       <ul className="movie-list">
         {dbMovies &&

@@ -51,6 +51,11 @@ h1 {
   box-shadow: 0 0 8px #00d4ff55;
 }
 
+.search-actions {
+  display: flex;
+  gap: 8px;
+}
+
 .return-btn,
 .search-bar button {
   padding: 8px 16px;
@@ -87,7 +92,7 @@ h1 {
 .movie-list li {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style: none;
   border-radius: 12px;
   background: #1a1a2e;
@@ -100,6 +105,8 @@ h1 {
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
   box-shadow: 0 0 8px #bf5fff22;
+
+  height: stretch;
 }
 
 .movie-list li:hover {
@@ -276,10 +283,13 @@ h2 {
   position: absolute;
   background-color: #1a1a2e;
   border: 1px solid #bf5fff;
-  max-height: 120px;
+  max-height: 250px;
   width: fit-content;
   overflow-y: auto;
   border-radius: 8px;
+
+  margin-top: 45px;
+  margin-right: 50px;
 }
 
 .dropdown-list {
@@ -290,4 +300,10 @@ h2 {
 
 .dropdown-list:hover {
   background-color: #bf5fff33;
+}
+
+.loading-state {
+  position: absolute;
+  top: 10%;
+  left: 75%;
 }
