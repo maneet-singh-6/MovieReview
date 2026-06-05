@@ -1,5 +1,5 @@
 import request from 'superagent'
-import { MovieData } from '../../models/index.ts'
+import { MovieData, ReviewData } from '../../models/index.ts'
 
 const rootURL = new URL(`/api/v1`, document.baseURI)
 
@@ -8,20 +8,19 @@ export async function getMovies() {
   return response.body
 }
 
+export async function getMovieById(id: number): Promise<MovieData> {
+  const response = await request.get(`${rootURL}/movies/${id}`)
+  return response.body
+}
+
 export async function addMovie(movie: MovieData) {
   const response = await request.post(`${rootURL}/movies`).send(movie)
   return response.body
 }
 
-// IMBD API available:
-// OkHttpClient client = new OkHttpClient();
-
-// Request request = new Request.Builder()
-//   .url("https://api.themoviedb.org/3/authentication")
-//   .get()
-//   .addHeader("accept", "application/json")
-//   .build();
-
-// Response response = client.newCall(request).execute();
-
-// I have an account nad can get the  API KEY!!! - Maneet
+export async function addReview(review: ReviewData): Promise<ReviewData> {
+  const response = await request
+    .post(`${rootURL}/movies/${review.movie_id}`)
+    .send(review)
+  return response.body
+}
