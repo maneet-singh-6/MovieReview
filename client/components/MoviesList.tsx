@@ -53,6 +53,7 @@ function MoviesList() {
       name: movie.primaryTitle,
       duration: movie.startYear,
       category: 'Later!',
+      poster: movie.primaryImage?.url || '',
     }
     addMovieMutation.mutate(newMovie)
   }
@@ -99,12 +100,17 @@ function MoviesList() {
       {isLoading && <p>Loading movies...</p>}
       {isError && <p>Error: Fetching Movies</p>}
 
-      <ul>
+      <ul className="movie-list">
         {dbMovies &&
           dbMovies.map((movie) => (
             <Link to={`/movies/${movie.id}`} key={movie.id}>
               <li>
                 {movie.name} ({movie.duration}){/* {movie.category} */}
+                <img
+                  src={movie.poster}
+                  alt={`${movie.name} poster`}
+                  className="poster"
+                />
               </li>
             </Link>
           ))}
