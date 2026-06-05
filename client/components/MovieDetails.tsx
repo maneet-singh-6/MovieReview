@@ -8,7 +8,7 @@ function MovieDetails() {
   const { id } = useParams()
   const movieId = Number(id)
 
-  const { data: movie } = useQuery({
+  const { data: movie, isLoading } = useQuery({
     queryKey: ['movie', movieId],
     queryFn: () => getMovieById(movieId),
   })
@@ -21,6 +21,8 @@ function MovieDetails() {
   const [name, setName] = useState('')
   const [date, setDate] = useState('')
   const [description, setDescription] = useState('')
+  const [rating, setRating] = useState(0)
+  const [hovered, setHovered] = useState(0)
 
   const queryClient = useQueryClient()
 
@@ -33,7 +35,23 @@ function MovieDetails() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    mutation.mutate({ name, date, description, movie_id: movieId })
+    const stars = '★'.repeat(rating) + '☆'.repeat(5 - rating)
+    const fullDescription = rating > 0 ? `${stars}\n${description}` : description
+    mutation.mutate({ name, date, description: fullDescription, movie_id: movieId })
+    setName('')
+    setDate('')
+    setDescription('')
+    setRating(0)
+    setHovered(0)
+  }
+
+  if (isLoading) {
+    return (
+      <div className="spinner-container">
+        <div className="spinner" />
+        <p className="spinner-label">Loading...</p>
+      </div>
+    )
   }
 
   return (
@@ -94,6 +112,19 @@ function MovieDetails() {
             onChange={(e) => setDate(e.target.value)}
             placeholder="Date (e.g. 5th June 2026)"
           />
+          <div className="star-picker">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <span
+                key={star}
+                className={`star ${star <= (hovered || rating) ? 'star--active' : ''}`}
+                onClick={() => setRating(star)}
+                onMouseEnter={() => setHovered(star)}
+                onMouseLeave={() => setHovered(0)}
+              >
+                ★
+              </span>
+            ))}
+          </div>
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
