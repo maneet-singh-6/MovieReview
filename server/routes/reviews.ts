@@ -3,9 +3,9 @@ import * as db from '../db/index.ts'
 
 const router = Router()
 
-router.post('/movies/:id', async (req, res) => {
+router.post('/:id', async (req, res) => {
   try {
-    const review = await db.addReview()
+    const review = await db.addReview(req.body)
     res.json(review)
   } catch (error) {
     console.log(error)
@@ -13,9 +13,10 @@ router.post('/movies/:id', async (req, res) => {
   }
 })
 
-router.get('/movies/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
-    const reviews = await db.getReviewsByMovieId()
+    const id = Number(req.params.id)
+    const reviews = await db.getReviewsByMovieId(id)
     res.json(reviews)
   } catch (error) {
     console.log(error)
@@ -23,4 +24,4 @@ router.get('/movies/:id', async (req, res) => {
   }
 })
 
-export default Router
+export default router
