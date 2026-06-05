@@ -23,3 +23,23 @@ body {
 .dropdown-list:hover {
   background-color: #f1f1f1;
 }
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-list li {
+  list-style: none;
+  border-radius: 12px;
+  background: black;
+  text-align: center;
+}
+
+.poster {
+  width: 150px;
+  height: 200px;
+  border-radius: 12px;
+}
