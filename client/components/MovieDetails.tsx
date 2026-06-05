@@ -1,4 +1,4 @@
-import { useParams } from 'react-router'
+import { Link, useParams } from 'react-router'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { useState } from 'react'
 import { getMovieById, getReviewsByMovieId, addReview } from '../apis/movies.ts'
@@ -40,11 +40,18 @@ function MovieDetails() {
     <div className="layout">
       {/* Movie hero card */}
       <div className="movie-hero">
-        <h1>{movie?.name}</h1>
+        <div className="review-header">
+          <h1>{movie?.name}</h1>
+          <Link to="/">
+            <button className="return-btn">Return to Home</button>
+          </Link>
+        </div>
+
         <div className="movie-meta">
           <span className="meta-badge">{movie?.category}</span>
-          <span className="meta-badge">{movie?.duration} min</span>
+          <span className="meta-badge">{movie?.duration}</span>
         </div>
+
         {movie?.poster && (
           <img
             src={movie.poster}
