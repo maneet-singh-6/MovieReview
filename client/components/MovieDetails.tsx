@@ -8,7 +8,7 @@ function MovieDetails() {
   const { id } = useParams()
   const movieId = Number(id)
 
-  const { data: movie, isLoading } = useQuery({
+  const { data: movie } = useQuery({
     queryKey: ['movie', movieId],
     queryFn: () => getMovieById(movieId),
   })
@@ -43,15 +43,6 @@ function MovieDetails() {
     setDescription('')
     setRating(0)
     setHovered(0)
-  }
-
-  if (isLoading) {
-    return (
-      <div className="spinner-container">
-        <div className="spinner" />
-        <p className="spinner-label">Loading...</p>
-      </div>
-    )
   }
 
   return (
