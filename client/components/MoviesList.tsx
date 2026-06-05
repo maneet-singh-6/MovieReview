@@ -12,14 +12,11 @@ function MoviesList() {
   const [searchInput, setSearchInput] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
 
-  // Search query based on API
-  const {
-    data: searchedMovies,
-    isLoading,
-    isError,
-  } = useQuery<ImdbMovie[]>({
-    queryKey: [searchTerm],
+  // Search query based on API — only runs when searchTerm is non-empty
+  const { data: searchedMovies } = useQuery<ImdbMovie[]>({
+    queryKey: ['imdbSearch', searchTerm],
     queryFn: () => searchMovies(searchTerm),
+    enabled: !!searchTerm,
   })
 
   // Local database
@@ -100,11 +97,14 @@ function MoviesList() {
         </div>
       </div>
 
+<<<<<<< HEAD
+=======
       <div className="loading-state">
         {isLoading && <p>Loading movies...</p>}
         {isError && <p>Error: Fetching Movies</p>}
       </div>
 
+>>>>>>> main
       <ul className="movie-list">
         {dbMovies &&
           dbMovies.map((movie) => (
