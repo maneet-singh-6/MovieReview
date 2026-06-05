@@ -4,7 +4,7 @@ const rootURL = new URL(`/api/v1`, document.baseURI)
 
 export async function getMovies() {
   const response = await request.get(`${rootURL}/movies`)
-  return response.body.fruits as string[]
+  return response.body
 }
 
 // IMBD API available:
