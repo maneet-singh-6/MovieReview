@@ -20,7 +20,7 @@ export async function addMovie(movie: MovieData) {
 
 export async function addReview(review: ReviewData): Promise<ReviewData> {
   const response = await request
-    .post(`${rootURL}/movies/${review.movie_id}`)
+    .post(`${rootURL}/movies/${review.movie_id}/reviews`)
     .send(review)
   return response.body
 }
