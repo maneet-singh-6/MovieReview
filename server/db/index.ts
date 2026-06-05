@@ -1,6 +1,6 @@
 import knex from 'knex'
 import config from './knexfile.js'
-import { Movie, MovieData, Review, ReviewData } from '../../models/index.ts'
+import { MovieData, ReviewData } from '../../models/index.ts'
 
 type Environment = 'development' | 'production' | 'test'
 const env = (process.env.NODE_ENV as Environment) || 'development'
