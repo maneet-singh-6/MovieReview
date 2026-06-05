@@ -112,6 +112,161 @@ h1 {
   margin-top: 12px;
 }
 
+/* ── Movie Details ─────────────────────────────────────── */
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #bf5fff;
+  text-shadow: 0 0 8px #bf5fff88;
+  margin-bottom: 16px;
+}
+
+/* Hero block at top of details page */
+.movie-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 0 24px 32px;
+}
+
+.movie-hero h1 {
+  padding: 32px 0 0;
+}
+
+.movie-meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.meta-badge {
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: #bf5fff22;
+  border: 1px solid #bf5fff55;
+  color: #bf5fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero-poster {
+  width: 200px;
+  border-radius: 12px;
+  border: 1px solid #bf5fff44;
+  box-shadow: 0 0 20px #bf5fff33;
+  margin-top: 8px;
+}
+
+/* Reviews grid */
+.reviews-section,
+.add-review-section {
+  padding: 0 24px 40px;
+}
+
+.no-reviews {
+  color: #7070aa;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.review-card {
+  background: #1a1a2e;
+  border: 1px solid #bf5fff44;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 8px #bf5fff22;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.review-card:hover {
+  transform: translateY(-3px);
+  border-color: #00d4ff;
+  box-shadow: 0 0 18px #00d4ff44, 0 0 6px #bf5fff33;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.reviewer-name {
+  font-weight: 700;
+  color: #00d4ff;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.review-date {
+  font-size: 0.78rem;
+  color: #7070aa;
+}
+
+.review-body {
+  color: #c0c0e8;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Add review form */
+.add-review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 560px;
+}
+
+.add-review-form input,
+.add-review-form textarea {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #bf5fff;
+  background: #1a1a2e;
+  color: #e0e0ff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  resize: vertical;
+}
+
+.add-review-form input:focus,
+.add-review-form textarea:focus {
+  border-color: #00d4ff;
+  box-shadow: 0 0 8px #00d4ff55;
+}
+
+.add-review-form button {
+  align-self: flex-start;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  background: #bf5fff;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.add-review-form button:hover {
+  background: #00d4ff;
+  color: #0d0d1a;
+}
+
 /* Dropdown */
 .dropdown {
   position: absolute;
