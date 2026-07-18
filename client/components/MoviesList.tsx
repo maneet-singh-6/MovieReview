@@ -20,7 +20,7 @@ function MoviesList() {
   })
 
   // Local database
-  const { data: dbMovies } = useQuery<Movie[]>({
+  const { data: dbMovies, isLoading, isError } = useQuery<Movie[]>({
     queryKey: ['dbMovies'],
     queryFn: getMovies,
   })
@@ -97,14 +97,11 @@ function MoviesList() {
         </div>
       </div>
 
-<<<<<<< HEAD
-=======
       <div className="loading-state">
         {isLoading && <p>Loading movies...</p>}
         {isError && <p>Error: Fetching Movies</p>}
       </div>
 
->>>>>>> main
       <ul className="movie-list">
         {dbMovies &&
           dbMovies.map((movie) => (
