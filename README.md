@@ -1,4 +1,4 @@
-# Movie Review 🎬
+# Dad Night Cinema 🎬
 
 A full-stack movie review app — browse a catalogue of films, open a film to see
 its details, and read or write reviews. Built as a group project during Dev
