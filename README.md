@@ -17,8 +17,8 @@ us to focus on working with the database and making a simple, functioning MVP
 rather than overcomplicating the idea and project — ensuring we focused on the
 task being completed first.
 
-[Movies Page](client/styles/images/movies.png)
-[Movie Details Page](client/styles/images/movie-details.png)
+![Movies Page](client/styles/images/movies.png)
+![Movie Details Page](client/styles/images/movie-details.png)
 
 👥 **Team:** Henry Nguyen · Young Ryou · Maneet Singh
 
@@ -82,5 +82,5 @@ Built with **Henry Nguyen** and **Young Ryou**.
 
 ## Planning & design (Miro Board)
 
-[Basic Wireframes](client/styles/images/wireframes.png)
-[Ticket Distribution](client/styles/images/kanban.png)
+![Basic Wireframes](client/styles/images/wireframes.png)
+![Ticket Distribution](client/styles/images/kanban.png)
