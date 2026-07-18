@@ -83,4 +83,3 @@ Built with **Henry Nguyen** and **Young Ryou**.
 ## Planning & design (Miro Board)
 
 ![Basic Wireframes](client/styles/images/wireframes.png)
-![Ticket Distribution](client/styles/images/kanban.png)
